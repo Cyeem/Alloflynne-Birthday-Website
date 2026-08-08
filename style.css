@@ -1,0 +1,1253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff4f8;
+    color: #4a2331;
+}
+
+
+/* OPENING SCREEN */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffd8e7,
+            #fff4f8 60%
+        );
+
+    overflow: hidden;
+}
+
+
+.sparkle {
+    font-size: 28px;
+    margin-bottom: 10px;
+
+    animation: sparkle 2s infinite;
+}
+
+
+.heart {
+    font-size: 70px;
+    margin-bottom: 20px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    color: #9b526b;
+}
+
+
+.hero h1 {
+    font-size: clamp(45px, 10vw, 80px);
+    line-height: 1.05;
+
+    color: #a7194b;
+
+    margin-bottom: 25px;
+}
+
+
+.subtitle {
+    max-width: 600px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+button {
+    border: none;
+
+    background: #c2185b;
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(194, 24, 91, 0.25);
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    transform: translateY(-4px);
+    background: #a3154d;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(15deg) scale(1.2);
+    }
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+}
+
+.hidden {
+    display: none !important;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 100px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.section h2 {
+    font-size: clamp(32px, 7vw, 55px);
+    color: #a7194b;
+    margin-bottom: 30px;
+}
+
+.section p {
+    max-width: 650px;
+    font-size: 19px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.birthday-message {
+    background:
+        linear-gradient(
+            135deg,
+            #fff4f8,
+            #ffe1ec
+        );
+}
+
+.section-number {
+    display: inline-block;
+
+    background: #c2185b;
+    color: white;
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.birthday-message h2 {
+    margin-bottom: 30px;
+}
+
+.special-line {
+    color: #a7194b;
+    font-weight: bold;
+    font-size: 21px !important;
+    margin-top: 30px !important;
+}
+
+/* PHOTO GALLERY */
+
+.memories {
+    background: white;
+}
+
+.memories h2 {
+    margin-bottom: 20px;
+}
+
+.gallery {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.photo-card {
+    height: 380px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 35px rgba(80, 20, 50, 0.12);
+
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+.photo-card:hover img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 600px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .photo-card {
+        height: 420px;
+    }
+
+}
+
+/* TALKING STAGE */
+
+.talking-stage {
+    background:
+        linear-gradient(
+            135deg,
+            #fff4f8,
+            #f9e8ff
+        );
+}
+
+.intro-text {
+    margin-bottom: 35px !important;
+}
+
+.talking-card {
+    max-width: 700px;
+
+    margin: 20px auto 0;
+
+    padding: 45px 30px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(90, 30, 80, 0.10);
+
+    position: relative;
+}
+
+.talking-icon {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    animation: floatIcon 2s ease-in-out infinite;
+}
+
+.talking-card p {
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin: 18px auto;
+}
+
+.flirty-line {
+    color: #a7194b;
+
+    font-size: 22px !important;
+
+    font-weight: bold;
+
+    margin-top: 30px !important;
+}
+
+@keyframes floatIcon {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+/* CHANCE QUESTION */
+
+.chance-section {
+    min-height: 90vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffe1ed,
+            #fff4f8
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.question-intro {
+    margin-bottom: 20px !important;
+}
+
+.big-question {
+    font-size: clamp(26px, 6vw, 45px) !important;
+
+    font-weight: bold;
+
+    color: #961644;
+
+    max-width: 700px !important;
+
+    line-height: 1.4 !important;
+
+    margin: 20px auto 40px !important;
+}
+
+.question-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 100px;
+
+    width: 100%;
+}
+
+#yesBtn {
+    background: #c2185b;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+#noBtn {
+    background: #555;
+
+    position: relative;
+
+    z-index: 5;
+
+    touch-action: none;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+}
+
+#answer {
+    margin-top: 40px;
+}
+
+
+/* YES MESSAGE */
+
+.yes-message {
+    max-width: 650px;
+
+    margin: 30px auto 0;
+
+    padding: 40px 25px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(90, 20, 50, 0.12);
+
+    animation: appear 0.8s ease;
+}
+
+.yes-message h2 {
+    margin-bottom: 20px;
+}
+
+.big-heart {
+    font-size: 65px;
+
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .question-buttons {
+        gap: 15px;
+    }
+
+    .question-buttons button {
+        padding: 14px 22px;
+    }
+
+}
+
+/* FLOATING HEARTS */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    z-index: 10000;
+
+    pointer-events: none;
+
+    animation:
+        floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+/* =================================
+   CONGRATULATIONS CELEBRATION
+================================= */
+
+.celebration {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 20000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 225, 238, 0.97),
+            rgba(255, 244, 248, 0.97)
+        );
+
+    animation:
+        celebrationAppear 0.6s ease;
+}
+
+
+.celebration-content {
+
+    padding: 35px 25px;
+
+    max-width: 650px;
+
+    animation:
+        celebrationPop 0.8s
+        cubic-bezier(.17,.67,.32,1.5);
+}
+
+
+.celebration-emoji {
+
+    font-size: 75px;
+
+    animation:
+        celebrationBounce 1s infinite;
+}
+
+
+.celebration h1 {
+
+    color: #b51f50;
+
+    font-size:
+        clamp(35px, 8vw, 65px);
+
+    line-height: 1.1;
+
+    margin: 20px 0;
+}
+
+
+.celebration p {
+
+    font-size: 22px;
+
+    color: #5b2438;
+
+    margin-bottom: 25px;
+}
+
+
+.celebration-ring {
+
+    font-size: 28px;
+
+    letter-spacing: 8px;
+
+    animation:
+        ringPulse 1.2s infinite;
+}
+
+
+/* FLOATING CELEBRATION PARTICLES */
+
+.celebration-particle {
+
+    position: fixed;
+
+    bottom: -60px;
+
+    z-index: 21000;
+
+    font-size:
+        calc(18px + 2vw);
+
+    pointer-events: none;
+
+    animation:
+        celebrationFloat
+        linear
+        forwards;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes celebrationAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes celebrationPop {
+
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+@keyframes celebrationBounce {
+
+    0%, 100% {
+        transform: translateY(0)
+                   scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px)
+                   scale(1.15);
+    }
+}
+
+
+@keyframes ringPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes celebrationFloat {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+
+        transform:
+            translateY(-120vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+.fade-out {
+
+    animation:
+        celebrationDisappear 1s
+        forwards;
+}
+
+
+@keyframes celebrationDisappear {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* ==============================
+   FINAL MESSAGE
+============================== */
+
+.final-message {
+    min-height: 90vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4a2331,
+            #8e153f
+        );
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.final-message h2 {
+    color: white !important;
+
+    max-width: 800px;
+
+    font-size:
+        clamp(32px, 7vw, 55px);
+}
+
+.final-message p {
+    color: #ffeaf2;
+
+    max-width: 700px;
+}
+
+.final-heart {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+.final-highlight {
+    color: white !important;
+
+    font-size: 25px !important;
+
+    font-weight: bold;
+
+    margin-top: 35px !important;
+}
+
+/* HIDE THE SURPRISE UNTIL IT IS OPENED */
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================
+   BIRTHDAY WEBSITE PAGES
+   ========================= */
+
+.hero,
+#surpriseContent > section {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Each surprise section fills the phone screen */
+#surpriseContent > section {
+    min-height: 100vh;
+}
+
+/* Make the surprise sections appear one at a time */
+.page-hidden {
+    display: none !important;
+}
+
+.page-visible {
+    display: flex !important;
+}
+
+/* Continue button */
+.continue-btn {
+    margin-top: 30px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* =================================
+   ONE SCREEN AT A TIME
+================================= */
+
+#surpriseContent {
+    width: 100%;
+}
+
+/* Hide every surprise section initially */
+#surpriseContent > section.birthday-page {
+    display: none !important;
+}
+
+/* Show ONLY the current section */
+#surpriseContent > section.birthday-page.active-page {
+    display: flex !important;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+/* Continue button */
+.next-page-btn {
+    margin-top: 35px;
+
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #c2185b;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(194, 24, 91, 0.25);
+
+    transition: transform 0.2s ease;
+}
+
+.next-page-btn:active {
+    transform: scale(0.95);
+}
+
+/* Keep the YES/NO buttons visible */
+#yesBtn,
+#noBtn {
+    position: relative;
+    z-index: 9999;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    #surpriseContent > section.birthday-page.active-page {
+        min-height: 100svh;
+        padding: 40px 18px;
+    }
+
+    .next-page-btn {
+        font-size: 15px;
+        padding: 13px 26px;
+    }
+}
+
+/* ================================
+   EXTRA FUN ANIMATIONS
+================================ */
+
+.no-button {
+    transition:
+        left 0.18s ease,
+        top 0.18s ease,
+        transform 0.18s ease;
+}
+
+.no-button.running {
+    animation: noShake 0.25s ease;
+}
+
+@keyframes noShake {
+    0%   { transform: rotate(0deg) scale(1); }
+    25%  { transform: rotate(-12deg) scale(1.08); }
+    50%  { transform: rotate(12deg) scale(0.92); }
+    75%  { transform: rotate(-8deg) scale(1.06); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* Funny little speech bubble */
+.no-message {
+    position: fixed;
+    z-index: 100001;
+
+    background: white;
+    color: #b51f52;
+
+    padding: 10px 16px;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    pointer-events: none;
+
+    animation:
+        messagePop 1.2s ease forwards;
+}
+
+@keyframes messagePop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-8deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.1) rotate(3deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-35px) scale(0.8);
+    }
+}
+
+/* Birthday sparkle */
+.birthday-sparkle {
+    position: fixed;
+    z-index: 100000;
+
+    pointer-events: none;
+
+    animation:
+        sparklePop 1.4s ease forwards;
+}
+
+@keyframes sparklePop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1.4) rotate(30deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-100px)
+            scale(0.4)
+            rotate(180deg);
+    }
+}
+
+/* YES celebration */
+.celebrate-title {
+    animation:
+        celebratePop 0.8s cubic-bezier(.17,.67,.32,1.5);
+}
+
+@keyframes celebratePop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================================
+   TEDDY + CAT FRIENDS
+================================ */
+
+.cute-friends {
+    position: fixed;
+    bottom: 18px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 18px;
+
+    z-index: 5000;
+
+    pointer-events: none;
+}
+
+.friend {
+    font-size: 55px;
+
+    filter: drop-shadow(
+        0 6px 8px rgba(0,0,0,.15)
+    );
+
+    animation: friendBounce 2s ease-in-out infinite;
+}
+
+.teddy {
+    animation-delay: 0s;
+}
+
+.cat {
+    animation-delay: .4s;
+}
+
+@keyframes friendBounce {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+/* Floating hearts above them */
+
+.friend-heart {
+    position: fixed;
+
+    bottom: 75px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    z-index: 4999;
+
+    animation:
+        friendHeartFloat 3s ease-out forwards;
+}
+
+@keyframes friendHeartFloat {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(0)
+            scale(.5);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-120px)
+            scale(1.2);
+    }
+}
+
+/* Speech bubble */
+
+.friend-bubble {
+
+    position: fixed;
+
+    bottom: 105px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: white;
+
+    color: #a51d4b;
+
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.12);
+
+    z-index: 5001;
+
+    pointer-events: none;
+
+    animation: bubblePop 3s ease forwards;
+}
+
+@keyframes bubblePop {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            scale(.5);
+    }
+
+    15% {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            scale(1.05);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            scale(.9);
+    }
+}
+
+/* Smaller on phones */
+
+@media (max-width: 600px) {
+
+    .friend {
+        font-size: 45px;
+    }
+
+    .cute-friends {
+        gap: 10px;
+        bottom: 12px;
+    }
+
+    .friend-bubble {
+        bottom: 85px;
+        font-size: 12px;
+    }
+}
+
+.congrats {
+    position: fixed !important;
+    top: 45% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(.2) !important;
+
+    z-index: 999999 !important;
+
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+
+    animation: hugeCongratulations 2.5s ease forwards !important;
+}
+
+@keyframes hugeCongratulations {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.1) rotate(-15deg) !important;
+    }
+
+    25% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.4) rotate(5deg) !important;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1) rotate(-3deg) !important;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -70%) scale(1.2) !important;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .congrats {
+        font-size: 23px;
+        white-space: normal;
+        width: 90%;
+    }
+}

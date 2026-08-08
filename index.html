@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Linet ❤️</title>
+
+<style>
+
+/* ================================
+   BASIC
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fff0f5;
+    color: #5b2036;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ================================
+   HERO / FIRST SCREEN
+================================ */
+
+.hero {
+    min-height: 100svh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(circle at top left, #ffd6e5, transparent 40%),
+        radial-gradient(circle at bottom right, #ffe4ed, transparent 40%),
+        #fff5f8;
+}
+
+.hero-small {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 80px);
+    margin: 10px 0;
+    color: #b51f52;
+    line-height: 1.05;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero-heart {
+    font-size: 45px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.main-button,
+.next-button,
+.yes-button,
+.no-button {
+
+    border: none;
+    border-radius: 40px;
+
+    padding: 16px 32px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.main-button,
+.next-button,
+.yes-button {
+
+    background: #c2185b;
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(194, 24, 91, 0.25);
+}
+
+.main-button:hover,
+.next-button:hover,
+.yes-button:hover {
+
+    transform: translateY(-3px);
+}
+
+.main-button {
+    margin-top: 20px;
+}
+
+
+/* ================================
+   SURPRISE
+================================ */
+
+#surprise {
+    display: none;
+}
+
+#surprise.open {
+    display: block;
+}
+
+
+/* ================================
+   EACH PAGE
+================================ */
+
+.page {
+    display: none;
+
+    min-height: 100svh;
+    width: 100%;
+
+    padding: 55px 20px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.page.active {
+    display: flex;
+}
+
+.page-number {
+    font-size: 14px;
+    background: #d98ba7;
+    color: white;
+
+    padding: 7px 15px;
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+}
+
+.page h2 {
+    font-size: clamp(32px, 6vw, 55px);
+    margin: 10px auto 25px;
+    color: #a51d4b;
+}
+
+.page p {
+    max-width: 750px;
+    font-size: 19px;
+    line-height: 1.8;
+    margin: 12px auto;
+}
+
+.next-button {
+    margin-top: 30px;
+}
+
+
+/* ================================
+   PHOTO PAGE
+================================ */
+
+.gallery {
+    width: min(950px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin: 20px auto;
+}
+
+.photo-card {
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(100, 20, 50, 0.12);
+
+    transform: rotate(0deg);
+
+    transition: transform 0.3s ease;
+}
+
+.photo-card:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+/* ================================
+   TALKING STAGE
+================================ */
+
+.talking-box {
+    max-width: 750px;
+
+    background: rgba(255,255,255,0.7);
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(120, 30, 60, 0.1);
+}
+
+.special-line {
+    font-size: 22px !important;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+
+/* ================================
+   YES / NO PAGE
+================================ */
+
+.question-box {
+    width: min(700px, 100%);
+
+    background: rgba(255,255,255,0.75);
+
+    border-radius: 30px;
+
+    padding: 35px 20px;
+
+    box-shadow:
+        0 15px 45px rgba(120, 30, 60, 0.12);
+}
+
+.question {
+    font-size: clamp(24px, 5vw, 38px) !important;
+    font-weight: bold;
+}
+
+.question-buttons {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+    min-height: 80px;
+
+    position: relative;
+}
+
+.yes-button {
+    background: #c2185b;
+}
+
+.no-button {
+
+    background: #eee;
+
+    color: #555;
+
+    position: relative;
+
+    z-index: 99999;
+}
+
+#answer {
+
+    min-height: 35px;
+
+    margin-top: 25px;
+
+    font-size: 19px;
+
+    color: #b51f52;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   FINAL PAGE
+================================ */
+
+.final-page {
+
+    background:
+        radial-gradient(circle at center, #ffe0eb, #fff4f7 60%);
+}
+
+.final-heart {
+
+    font-size: 80px;
+
+    animation: heartbeat 1.2s infinite;
+
+    margin-bottom: 10px;
+}
+
+.final-title {
+    color: #b51f52;
+}
+
+.final-message {
+    font-size: 22px !important;
+}
+
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    pointer-events: none;
+
+    z-index: 100000;
+
+    animation: floatHeart 4s linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 25px 18px;
+    }
+
+    .hero-small {
+        font-size: 15px;
+    }
+
+    .page {
+        padding: 45px 16px;
+    }
+
+    .page p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .photo-card img {
+        height: 180px;
+    }
+
+    .question-buttons {
+        min-height: 130px;
+    }
+
+    .main-button,
+    .next-button,
+    .yes-button,
+    .no-button {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo-card img {
+        height: 145px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     FIRST SCREEN
+===================================== -->
+
+<section class="hero" id="hero">
+
+    <div class="hero-heart">💕</div>
+
+    <p class="hero-small">
+        I made something small for someone who has
+        recently become a little too interesting to me... 👀
+    </p>
+
+    <h1>
+        Happy 19th
+        <span>Linet ❤️</span>
+    </h1>
+
+    <p class="hero-small">
+        Since it's your special day, I figured you deserved
+        something a little different. 🎂✨
+    </p>
+
+    <button
+        class="main-button"
+        id="openSurprise">
+        Open Your Surprise 🎁
+    </button>
+
+</section>
+
+
+<!-- =====================================
+     SURPRISE CONTENT
+===================================== -->
+
+<div id="surprise">
+
+
+    <!-- ================================
+         PAGE 1
+    ================================= -->
+
+    <section class="page active">
+
+        <div class="page-number">
+            01
+        </div>
+
+        <h2>
+            For You, Linet 💌
+        </h2>
+
+        <p>
+            Happy 19th Birthday, Linet! ❤️🎂
+        </p>
+
+        <p>
+            I hope this new chapter of your life brings you
+            happiness, beautiful memories, success, and plenty
+            of reasons to smile.
+        </p>
+
+        <p>
+            You deserve a birthday that feels just as special
+            as you are. 🥹💕
+        </p>
+
+        <button class="next-button">
+            There's More 👀
+        </button>
+
+    </section>
+
+
+    <!-- ================================
+         PAGE 2 - PHOTOS
+    ================================= -->
+
+    <section class="page">
+
+        <div class="page-number">
+            02
+        </div>
+
+        <h2>
+            A Little More Of You 📸
+        </h2>
+
+        <p>
+            Because one picture of you definitely wasn't enough. 😂❤️
+        </p>
+
+        <div class="gallery">
+
+            <div class="photo-card">
+                <img src="photo1.jpg" alt="Linet">
+            </div>
+
+            <div class="photo-card">
+                <img src="photo2.jpg" alt="Linet">
+            </div>
+
+            <div class="photo-card">
+                <img src="photo3.jpg" alt="Linet">
+            </div>
+
+            <div class="photo-card">
+                <img src="photo4.jpg" alt="Linet">
+            </div>
+
+            <div class="photo-card">
+                <img src="photo5.jpg" alt="Linet">
+            </div>
+
+            <div class="photo-card">
+                <img src="photo6.jpg" alt="Linet">
+            </div>
+
+        </div>
+
+        <button class="next-button">
+            Okay... Keep Going 😂
+        </button>
+
+    </section>
+
+
+    <!-- ================================
+         PAGE 3 - TALKING STAGE
+    ================================= -->
+
+    <section class="page">
+
+        <div class="page-number">
+            03
+        </div>
+
+        <h2>
+            Our Little Talking Stage 👀
+        </h2>
+
+        <div class="talking-box">
+
+            <p>
+                Okay... let's be honest for a second. 😅
+            </p>
+
+            <p>
+                We've only recently started getting to know
+                each other, but honestly... I've really enjoyed
+                talking to you. 🥹
+            </p>
+
+            <p>
+                You're becoming someone I'm genuinely curious
+                to know better, and I can't lie... I'm enjoying
+                where this little thing is going. ❤️
+            </p>
+
+            <p class="special-line">
+                So here's a little birthday surprise from me to you. 🎁
+            </p>
+
+        </div>
+
+        <button class="next-button">
+            One Last Thing... 👀
+        </button>
+
+    </section>
+
+
+    <!-- ================================
+         PAGE 4 - QUESTION
+    ================================= -->
+
+    <section class="page">
+
+        <div class="page-number">
+            04
+        </div>
+
+        <div class="question-box">
+
+            <div style="font-size:50px;">
+                💕
+            </div>
+
+            <h2>
+                So... I Guess I Have A Chance Now? 👀
+            </h2>
+
+            <p class="question">
+                Linet, would you give me a chance
+                to get to know you better? 🥹❤️
+            </p>
+
+            <div class="question-buttons">
+
+                <button
+                    class="yes-button"
+                    id="yesBtn">
+                    YES ❤️
+                </button>
+
+                <button
+                    class="no-button"
+                    id="noBtn">
+                    NO 😂
+                </button>
+
+            </div>
+
+            <p id="answer"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         PAGE 5 - FINAL
+    ================================= -->
+
+    <section class="page final-page">
+
+        <div class="page-number">
+            05
+        </div>
+
+        <div class="final-heart">
+            ❤️
+        </div>
+
+        <h2 class="final-title">
+            Happy 19th Birthday, Linet! 🎂✨
+        </h2>
+
+        <p class="final-message">
+            Whatever your answer is, I hope you know
+            that I genuinely wish you nothing but happiness,
+            success and beautiful moments in this new chapter.
+        </p>
+
+        <p class="final-message">
+            And who knows... maybe this birthday surprise
+            is the beginning of something beautiful. 👀❤️
+        </p>
+
+        <p class="final-message">
+            Enjoy your day, birthday girl. 🥹💕
+        </p>
+
+        <p style="font-size:25px;">
+            🎂 💕 ✨ 🥂 ❤️
+        </p>
+
+    </section>
+
+
+</div>
+
+
+<script>
+
+/* =========================================
+   OPEN SURPRISE
+========================================= */
+
+const openButton =
+    document.getElementById("openSurprise");
+
+const surprise =
+    document.getElementById("surprise");
+
+const pages =
+    document.querySelectorAll(".page");
+
+
+let currentPage = 0;
+
+
+/* Open */
+openButton.addEventListener("click", function () {
+
+    document.getElementById("hero").style.display = "none";
+
+    surprise.classList.add("open");
+
+    currentPage = 0;
+
+    showPage(currentPage);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
+
+function showPage(number) {
+
+    pages.forEach(function(page, index) {
+
+        if (index === number) {
+            page.classList.add("active");
+        } else {
+            page.classList.remove("active");
+        }
+
+    });
+
+    currentPage = number;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* All Continue buttons */
+
+const nextButtons =
+    document.querySelectorAll(".next-button");
+
+nextButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        if (currentPage < pages.length - 1) {
+
+            showPage(currentPage + 1);
+
+        }
+
+    });
+
+});
+
+
+/* =========================================
+   YES / NO GAME
+========================================= */
+
+const yesButton =
+    document.getElementById("yesBtn");
+
+const noButton =
+    document.getElementById("noBtn");
+
+const answer =
+    document.getElementById("answer");
+
+
+let noAttempts = 0;
+
+
+const noMessages = [
+
+    "NO? 😂 Are you sure?",
+
+    "Think again 😭❤️",
+
+    "Nice try 😂",
+
+    "You can't escape this one 😌💕",
+
+    "Linet pleaseee 🥹",
+
+    "Just say YES already 😂❤️",
+
+    "YES is literally right there 👉❤️"
+
+];
+
+
+/* =========================================
+   MOVE NO BUTTON
+========================================= */
+
+function moveNoButton(event) {
+
+    if (event) {
+        event.preventDefault();
+    }
+
+    noAttempts++;
+
+    answer.innerHTML =
+        noMessages[
+            Math.min(
+                noAttempts - 1,
+                noMessages.length - 1
+            )
+        ];
+
+
+    /*
+       IMPORTANT:
+
+       fixed positioning means the button
+       can move anywhere on the phone screen,
+       not just inside its original container.
+    */
+
+    noButton.style.position = "fixed";
+
+
+    const padding = 20;
+
+
+    const maxX =
+        window.innerWidth -
+        noButton.offsetWidth -
+        padding;
+
+
+    const maxY =
+        window.innerHeight -
+        noButton.offsetHeight -
+        padding;
+
+
+    const randomX =
+        padding +
+        Math.random() *
+        Math.max(1, maxX - padding);
+
+
+    const randomY =
+        padding +
+        Math.random() *
+        Math.max(1, maxY - padding);
+
+
+    noButton.style.left =
+        randomX + "px";
+
+
+    noButton.style.top =
+        randomY + "px";
+
+
+    noButton.style.zIndex =
+        "999999";
+
+
+    noButton.style.transform =
+        "rotate(" +
+        ((Math.random() * 20) - 10) +
+        "deg)";
+
+}
+
+
+/* Laptop */
+
+noButton.addEventListener(
+    "mouseenter",
+    moveNoButton
+);
+
+
+/* Phone */
+
+noButton.addEventListener(
+    "touchstart",
+    moveNoButton,
+    {
+        passive: false
+    }
+);
+
+
+/* Also catch clicks */
+
+noButton.addEventListener(
+    "click",
+    moveNoButton
+);
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+yesButton.addEventListener(
+    "click",
+    function() {
+
+        answer.innerHTML =
+            "I KNEW IT 😂❤️💍<br>" +
+            "Okay Linet... looks like I have a chance now. 🥹💕";
+
+
+        createHearts();
+
+
+        setTimeout(function() {
+
+            showPage(4);
+
+        }, 1400);
+
+    }
+);
+
+
+/* =========================================
+   HEART ANIMATION
+========================================= */
+
+function createHearts() {
+
+    for (
+        let i = 0;
+        i < 35;
+        i++
+    ) {
+
+        const heart =
+            document.createElement("div");
+
+
+        heart.className =
+            "floating-heart";
+
+
+        heart.innerHTML =
+            Math.random() > 0.5
+                ? "❤️"
+                : "💕";
+
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+
+        heart.style.fontSize =
+            (18 + Math.random() * 30) + "px";
+
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, 6500);
+
+    }
+
+}
+
+/* ================================
+   TEDDY + CAT ANIMATION
+================================ */
+
+const friendMessages = [
+
+    "Happy birthday Linet! 🧸❤️",
+
+    "19 looks good on you 😌💕",
+
+    "Calvin made this for you 👀",
+
+    "Okay... he's actually trying 😂",
+
+    "Don't run from the NO button! 🏃‍♀️😂",
+
+    "Give the boy a chance 😭❤️",
+
+    "We support this talking stage 🧸🐱",
+
+    "Something tells me you're smiling 😂💕"
+
+];
+
+let friendMessageIndex = 0;
+
+
+function showFriendMessage() {
+
+    const bubble =
+        document.createElement("div");
+
+    bubble.className =
+        "friend-bubble";
+
+    bubble.innerHTML =
+        friendMessages[
+            friendMessageIndex
+        ];
+
+    document.body.appendChild(
+        bubble
+    );
+
+    friendMessageIndex++;
+
+    if (
+        friendMessageIndex >=
+        friendMessages.length
+    ) {
+        friendMessageIndex = 0;
+    }
+
+    setTimeout(function() {
+
+        bubble.remove();
+
+    }, 3000);
+}
+
+
+/* First message */
+
+setTimeout(
+    showFriendMessage,
+    1500
+);
+
+
+/* New message every 6 seconds */
+
+setInterval(
+    showFriendMessage,
+    6000
+);
+
+
+/* Little hearts */
+
+function friendHearts() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "friend-heart";
+
+    heart.innerHTML =
+        Math.random() > .5
+            ? "❤️"
+            : "💕";
+
+    heart.style.left =
+        (45 + Math.random() * 10) + "vw";
+
+    document.body.appendChild(
+        heart
+    );
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 3000);
+}
+
+
+setInterval(
+    friendHearts,
+    1800
+);
+
+</script>
+
+<div class="cute-friends">
+
+    <div class="friend teddy">
+        🧸
+    </div>
+
+    <div class="friend cat">
+        🐱
+    </div>
+
+</div>
+
+</body>
+</html>
